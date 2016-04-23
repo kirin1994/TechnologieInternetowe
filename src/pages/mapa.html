@@ -1,0 +1,156 @@
+<!doctype html>
+
+<html class="no-js" lang="en" dir="ltr">
+  <head>
+  
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zabawa z Foundation</title>
+     <link rel="stylesheet" href="assets/scss/foundation.css">
+    <link rel="stylesheet" href="assets/scss/app.css">
+  	<link rel="import" href="bower_components/polymer/polymer.html">
+<script type="text/javascript"
+    src="http://maps.google.com/maps/api/js?sensor=false">
+
+</script>
+
+<script type="text/javascript">
+  function initialize() {
+    var position = new google.maps.LatLng(54.39591, 18.57327);
+    var myOptions = {
+      zoom: 10,
+      center: position,
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    };
+    var map = new google.maps.Map(
+        document.getElementById("map_canvas"),
+        myOptions);
+ 
+    var marker = new google.maps.Marker({
+        position: position,
+        map: map,
+        title:"This is the place."
+    });  
+ 
+    var contentString = 'Na uczelnie ruszać czas!';
+    var infowindow = new google.maps.InfoWindow({
+        content: contentString
+    });
+ 
+    google.maps.event.addListener(marker, 'click', function() {
+      infowindow.open(map,marker);
+    });
+ 
+  }
+ 
+</script>
+  <body onload="initialize()">
+
+  	<div class="off-canvas-wrapper">
+
+    	<div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>
+
+    	<div class="off-canvas position-left" id="mobile-menu" data-off-canvas>
+    			<ul>
+    				<li><a href="index.html">Strona główna</a></li>
+					<li><a href="tabele.html">Tabele</a></li>
+					<li><a href="mapa.html">Mapa</a></li>
+					<li><a href="about.html">About</a></li>
+					 <li><a href="test.html">Test</a></li>
+				</ul>
+
+    	</div>
+
+
+	  <!--Wersja Mobilna-->
+	  <div class="off-canvas-content" data-off-canvas-content>
+	
+	  	<div class="title-bar show-for-small-only">
+ 		 <div class="title-bar-left">
+    	<button class="menu-icon" type="button" data-open="mobile-menu"></button>
+    	<span class="title-bar-title">Strona</span>
+ 		 </div>
+  		
+		</div>
+
+
+
+	  <!--Wersja komputerowa-->
+		<nav class="top-bar nav-desktop">
+			<div class="wrap">
+    
+			<div class="top-bar-left">
+   
+			<h3 class='site-logo'>Moja strona</h3>
+	
+			</div>
+      	
+			<div class="top-bar-right">
+				<ul class="menu menu-desktop">
+					<li><a href="index.html">Strona główna</a></li>
+					<li><a href="tabele.html">Tabele</a></li>
+					<li><a href="mapa.html">Mapa</a></li>
+					<li><a href="about.html">About</a></li>
+					 <li><a href="test.html">Test</a></li>
+				</ul>
+			</div>
+			</div>
+		</nav>	
+		
+		
+		
+		
+      	<!--hero-->
+      	<section class="hero">
+			<div class="wrap">
+			<h1>Witam na mojej stronie</h1>
+			<p>Teraz już nikt nie będzie miał wymówki, że nie wiedział jak trafić na uczelnię i dlatego spóźnił się na zajęcia. </p>
+			<a href="test.html" class="button">Test</a>
+			<a href="about.html" class="success button">About</a>
+			</div>
+      	</section>
+      	
+      	
+      	<!--main-->
+      <div class="center">
+     <iframe 
+     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2322.7835205471324!2d18.572131616063565!3d54.39613860325924!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46fd752f76dddae7%3A0x4d4128c9a5066e47!2sUniwersytet+Gda%C5%84ski!5e0!3m2!1spl!2spl!4v1461433024271" style="width:500px; height:500px" allowfullscreen></iframe>
+     </div>
+      	<!--footer-->
+      	<footer>	
+			<div class="wrap row small-up-1 medium-up-3">
+				<div class="column">
+				<h4>Dane kontaktowe</h4>
+				<hr>
+				<a href="#"><span>Telefon </span>123 345 567</a>
+				<a href="#"><span>Email </span>firma@firma.com</a>
+				<a href="#"><span>Addres </span>123 Uniwersytetowa</a>
+				</div>
+				
+				<div class="column">
+				<h4>O stronie</h4>
+				<hr>
+				<a href='#'>O mnie</a>
+				<a href='#'>Serwis</a>
+				<a href='#'>Kontakt</a>
+				</div>
+				<div class="column">
+				<h4>Media</h4>
+				<hr>
+				<a href='#'>Facebook</a>
+				<a href='#'>Twitter</a>
+				<a href='#'>Instagram</a>
+				</div>
+			</div>
+      	</footer>
+  		</div>
+  		</div>
+  		</div> 	
+  		</div>
+    <script src="assets/js/vendor/jquery.js"></script>
+    <script src="assets/js/vendor/what-input.js"></script>
+    <script src="assets/js/vendor/foundation.js"></script>
+    <script src="assets/js/app.js"></script>
+  </body>
+</html>

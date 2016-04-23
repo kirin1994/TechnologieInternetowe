@@ -1,0 +1,9 @@
+{
+  "firebase": "podlawski-strona",
+  "public": "src/pages",
+  "ignore": [
+    "firebase.json",
+    "**/.*",
+    "**/node_modules/**"
+  ]
+}
